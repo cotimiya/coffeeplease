@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #FAF7F2;
+    --hover-color: #484848;
+    --text-color: #252525;
+    --button-color: #252525;
+    --box-color: #F2EBE0;
+    --main-font: 'Unbounded', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    z-index: 100;
+    background-color: var(--main-color);
+
+    ul {
+        position: relative;
+        display: flex;
+        gap: 30px;
+
+        li {
+            list-style: none;
+
+            a {
+                position: relative;
+                text-decoration: none;
+                font-size: 15px;
+                color: var(--text-color);
+                font-weight: 500;
+                text-transform: 0.2em;
+                font-family: var(--main-font);
+            }
+            a::before {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                width: 100%;
+                height: 2px;
+                background: var(--text-color);
+                transform: scaleX(0);
+                transition: transform 0.5s ease-in-out;
+                transform-origin: right;
+            }
+            a:hover::before {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+        }
+    }
+}
+
+.menuToggle {
+    position: relative;
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .menuToggle {
+        position: absolute;
+        display: block;
+        font-size: 2em;
+        cursor: pointer;
+        z-index: 10;
+    }
+    header {
+        .navigation {
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            left: 100%;
+        }
+    }
+    header.open {
+        .navigation {
+            top: 80px;
+            opacity: 1;
+            visibility: visible;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            background: var(--main-color);
+            width: 100%;
+            height: calc(100vh - 80px);
+            padding: 40px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+            li {
+                a {
+                    font-size: 1.25em;
+                }
+            }
+        }
+    }
+}
+
+.logo {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-family: var(--main-font);
+}
+@media (max-width: 800px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+}
+
+.group {
+    display: flex;
+    align-items: center;
+}

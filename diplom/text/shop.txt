@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Shop</title>
+    <link rel="stylesheet" href="header/header.css">
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="footer/footer.css">
+</head>
+
+<body>
+    <header>
+        <a href="main.php" class="logo">Coffee<br>Please</a>
+        <div class="group">
+            <ul class="navigation">
+                <li><a href="main.php">Главная</a></li>
+                <li><a href="shop.php">Меню</a></li>
+                <li><a href="about.php">О компании</a></li>
+                <li><a href="lk.php">Личный кабинет</a></li>
+                <li><a href="#"><ion-icon name="bag-handle" class="bx bx-shopping-bag" id="cart-icon"></ion-icon></a>
+                </li>
+            </ul>
+            <ion-icon name="menu-outline" class="menuToggle"></ion-icon>
+            <div class="cart">
+                <h2 class="cart-title">Ваша корзина</h2>
+                <div class="cart-content" style="font-family: var(--main-font);"></div>
+                <div class="total">
+                    <div class="total-title">Итого</div>
+                    <div class="total-price">0 ₽</div>
+                </div>
+                <button type="button" class="btn-buy" style="border-radius: 5px;">Купить</button>
+                <ion-icon name="close-outline" id="close-cart"></ion-icon>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="shop-container">
+            <div class="section-title">Меню</div>
+            <h2 class="title-bottom">Кофе и чай</h2>
+            <div class="shop-content">
+                <!-- Box-1 -->
+                <div class="product-box">
+                    <img src="img/coffee1.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Эспрессо</h2>
+                    <span class="price">160 ₽</span>
+                    <button id="open-modal-box"><ion-icon name="ellipsis-vertical" class="details"></ion-icon></button>
+                    <ion-icon name="bag-handle" class="bx bx-shopping-bag add-cart"></ion-icon>
+                </div>
+                <!-- modal window -->
+                <div class="modal" id="my-modal">
+                    <div class="modal-window">
+                        <img src="img/coffee1.jpg" alt=""><br>
+                        <h2>Эспрессо</h2>
+                        <span class="price">160 ₽</span>
+                        <h3>Подробнее</h3>
+                        <p>Эспрессо — сложный и интересный напиток.
+                            Его считают одним из самых привередливых
+                            к условиям приготовления и навыкам бариста.
+                            Консистенция эспрессо напоминает сироп — концентрированный
+                            напиток с очень интенсивным вкусом.</p>
+                        <button id="close-modal-box"><ion-icon name="close-outline" class="close-cart"></ion-icon></button>
+                    </div>
+                </div>
+                <!-- Box-2 -->
+                <div class="product-box">
+                    <img src="img/coffee2.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Латте</h2>
+                    <span class="price">210 ₽</span>
+                    <button id="open-modal-box"><ion-icon name="ellipsis-vertical" class="details"></ion-icon></button>
+                    <ion-icon name="bag-handle" class="bx bx-shopping-bag add-cart"></ion-icon>
+                </div>
+                <!-- Box-3 -->
+                <div class="product-box">
+                    <img src="img/coffee3.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Капучино</h2>
+                    <span class="price">170 ₽</span>
+                    <button id="open-modal-box"><ion-icon name="ellipsis-vertical" class="details"></ion-icon></button>
+                    <ion-icon name="bag-handle" class="bx bx-shopping-bag add-cart"></ion-icon>
+                </div>
+                <!-- Box-4 -->
+                <div class="product-box">
+                    <img src="img/coffee4.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Раф классический</h2>
+                    <span class="price">250 ₽</span>
+                    <button id="open-modal-box"><ion-icon name="ellipsis-vertical" class="details"></ion-icon></button>
+                    <ion-icon name="bag-handle" class="bx bx-shopping-bag add-cart"></ion-icon>
+                </div>
+                <!-- Box-5 -->
+                <div class="product-box">
+                    <img src="img/coffee5.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Американо</h2>
+                    <span class="price">160 ₽</span>
+                    <button id="open-modal-box"><ion-icon name="ellipsis-vertical" class="details"></ion-icon></button>
+                    <ion-icon name="bag-handle" class="bx bx-shopping-bag add-cart"></ion-icon>
+                </div>
+                <!-- Box-6 -->
+                <div class="product-box">
+                    <img src="img/tee.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Чай листовой</h2>
+                    <span class="price">170 ₽</span>
+                    <button id="open-modal-box"><ion-icon name="ellipsis-vertical" class="details"></ion-icon></button>
+                    <ion-icon name="bag-handle" class="bx bx-shopping-bag add-cart"></ion-icon>
+                </div>
+                <!-- Box-7 -->
+                <div class="product-box">
+                    <img src="img/cocoa.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Какао</h2>
+                    <span class="price">210 ₽</span>
+                    <button id="open-modal-box"><ion-icon name="ellipsis-vertical" class="details"></ion-icon></button>
+                    <ion-icon name="bag-handle" class="bx bx-shopping-bag add-cart"></ion-icon>
+                </div>
+            </div>
+
+            <h2 class="title-bottom">Холодные напитки</h2>
+            <div class="shop-content">
+                <!-- Box-1 -->
+                <div class="product-box">
+                    <img src="img/drink1.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Лимонад</h2>
+                    <span class="price">230 ₽</span>
+                    <button id="open-modal-box"><ion-icon name="ellipsis-vertical" class="details"></ion-icon></button>
+                    <ion-icon name="bag-handle" class="bx bx-shopping-bag add-cart"></ion-icon>
+                </div>
+                <!-- Box-2 -->
+                <div class="product-box">
+                    <img src="img/drink2.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Сок</h2>
+                    <span class="price">270 ₽</span>
+                    <button id="open-modal-box"><ion-icon name="ellipsis-vertical" class="details"></ion-icon></button>
+                    <ion-icon name="bag-handle" class="bx bx-shopping-bag add-cart"></ion-icon>
+                </div>
+                <!-- Box-3 -->
+                <div class="product-box">
+                    <img src="img/drink3.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Смузи</h2>
+                    <span class="price">160 ₽</span>
+                    <button id="open-modal-box"><ion-icon name="ellipsis-vertical" class="details"></ion-icon></button>
+                    <ion-icon name="bag-handle" class="bx bx-shopping-bag add-cart"></ion-icon>
+                </div>
+                <!-- Box-4 -->
+                <div class="product-box">
+                    <img src="img/drink4.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Вода</h2>
+                    <span class="price">90 ₽</span>
+                    <button id="open-modal-box"><ion-icon name="ellipsis-vertical" class="details"></ion-icon></button>
+                    <ion-icon name="bag-handle" class="bx bx-shopping-bag add-cart"></ion-icon>
+                </div>
+            </div>
+
+            <h2 class="title-bottom">Десерты</h2>
+            <div class="shop-content">
+                <!-- Box-1 -->
+                <div class="product-box">
+                    <img src="img/dessert1.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Маффин</h2>
+                    <span class="price">150 ₽</span>
+                    <button id="open-modal-box"><ion-icon name="ellipsis-vertical" class="details"></ion-icon></button>
+                    <ion-icon name="bag-handle" class="bx bx-shopping-bag add-cart"></ion-icon>
+                </div>
+                <!-- Box-2 -->
+                <div class="product-box">
+                    <img src="img/dessert2.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Слойка с сыром</h2>
+                    <span class="price">120 ₽</span>
+                    <button id="open-modal-box"><ion-icon name="ellipsis-vertical" class="details"></ion-icon></button>
+                    <ion-icon name="bag-handle" class="bx bx-shopping-bag add-cart"></ion-icon>
+                </div>
+                <!-- Box-3 -->
+                <div class="product-box">
+                    <img src="img/dessert3.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Эклер</h2>
+                    <span class="price">210 ₽</span>
+                    <button id="open-modal-box"><ion-icon name="ellipsis-vertical" class="details"></ion-icon></button>
+                    <ion-icon name="bag-handle" class="bx bx-shopping-bag add-cart"></ion-icon>
+                </div>
+                <!-- Box-4 -->
+                <div class="product-box">
+                    <img src="img/dessert4.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Мороженое</h2>
+                    <span class="price">390 ₽</span>
+                    <button id="open-modal-box"><ion-icon name="ellipsis-vertical" class="details"></ion-icon></button>
+                    <ion-icon name="bag-handle" class="bx bx-shopping-bag add-cart"></ion-icon>
+                </div>
+                <!-- Box-5 -->
+                <div class="product-box">
+                    <img src="img/dessert5.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Печенье злаковое</h2>
+                    <span class="price">130 ₽</span>
+                    <button id="open-modal-box"><ion-icon name="ellipsis-vertical" class="details"></ion-icon></button>
+                    <ion-icon name="bag-handle" class="bx bx-shopping-bag add-cart"></ion-icon>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footerNav">
+            <ul>
+                <li><a href="main.php" id="footer-logo">Coffee<br>Please</a></li>
+                <li><a href="main.php">Главная</a></li>
+                <li><a href="shop.php">Меню</a></li>
+                <li><a href="about.php">О компании</a></li>
+                <li><a href="lk.php">Личный кабинет</a></li>
+                <li><a href="#"><ion-icon name="bag-handle" class="bx bx-shopping-bag" id="cart-icon"></ion-icon></a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy;2023; </p>
+        </div>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/modal.js"></script>
+
+    <script>
+        let navigation = document.querySelector('.navigation');
+        let menuToggle = document.querySelector('.menuToggle');
+        let header = document.querySelector('header');
+
+        menuToggle.onclick = function () {
+            header.classList.toggle('open');
+        }
+    </script>
+
+    <script src="js/shop.js"></script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        const sr = ScrollReveal({
+            origin: 'top',
+            distance: '85px',
+            duration: 2500,
+            reset: true
+        })
+        sr.reveal('.section-title', { delay: 100 });
+        sr.reveal('.title-bottom', { delay: 100 });
+        sr.reveal('.product-box', { delay: 100 });
+        sr.reveal('.footerNav', { delay: 100 });
+        sr.reveal('.footer-bottom', { delay: 100 });
+    </script>
+</body>
+
+</html>
+
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap');
+
+:root {
+    --main-color: #FAF7F2;
+    --hover-color: #484848;
+    --text-color: #252525;
+    --button-color: #252525;
+    --box-color: #F2EBE0;
+    --main-font: 'Unbounded', sans-serif;
+}
+
+body {
+    background: var(--main-color);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img {
+    width: 100%;
+}
+
+header {
+    .cart {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 360px;
+        min-height: 100vh;
+        padding: 20px;
+        background: var(--main-color);
+        box-shadow: 0 15px 15px rgba(0, 0, 0, 0.15);
+        transition: .3s;
+        z-index: 10;
+        .cart-box {
+            display: grid;
+            grid-template-columns: 32% 50% 18%;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .cart-img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            padding: 10px;
+        }
+        .detail-box {
+            display: grid;
+            row-gap: 0.5rem;
+        }
+        .card-product-title {
+            font-size: 1rem;
+            font-family: var(--main-font);
+        }
+        .cart-price {
+            font-weight: 500;
+            font-family: var(--main-font);
+        }
+        .cart-quantity {
+            border: 1px solid black;
+            border-color: rgb(202, 202, 202);
+            outline-color: rgb(202, 202, 202);
+            width: 2.4rem;
+            text-align: center;
+            font-size: 1rem;
+        }
+        .cart-remove {
+            font-size: 24px;
+            color: red;
+            cursor: pointer;
+        }
+        .total {
+            display: flex;
+            justify-content: flex-end;
+            border-top: 1px solid rgb(202, 202, 202);
+            font-family: var(--main-font);
+        }
+        .total-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0.5rem;
+            font-family: var(--main-font);
+        }
+        .total-price {
+            margin: 0.5rem;
+            font-family: var(--main-font);
+        }
+        .btn-buy {
+            display: flex;
+            margin: 1.5rem auto 0 auto;
+            padding: 12px 20px;
+            border: none;
+            background: var(--button-color);
+            color: white;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: .3s;
+            font-family: var(--main-font);
+            border-radius: 5px;
+        }
+        .btn-buy:hover {
+            background-color: var(--hover-color);
+        }
+        #close-cart {
+            position: absolute;
+            top: 1rem;
+            right: 0.8rem;
+            font-size: 2rem;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+        .cart-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            color: var(--text-color);
+            font-family: var(--main-font);
+        }
+    }
+    .cart.active {
+        right: 0;
+    }
+    @media (max-width: 400px) {
+        .cart {
+            width: 320px;
+        }
+    }
+    @media (max-width: 360px) {
+        .cart {
+            width: 280px;
+        }
+    }
+}
+
+main {
+    margin-top: 2rem;
+    .shop-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            font-family: var(--main-font);
+        }
+        @media (max-width: 800px) {
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        @media (max-width: 500px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+        .title-bottom {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            margin-top: 5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            font-family: var(--main-font);
+        }
+        @media (max-width: 800px) {
+            .title-bottom {
+                font-size: 1.2rem;
+            }
+        }
+        @media (max-width: 500px) {
+            .title-bottom {
+                font-size: 1rem;
+            }
+        }
+        .shop-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+            gap: 1.5rem;
+
+            .product-box {
+                position: relative;
+                transition: .3s;
+            }
+            .product-box:hover {
+                padding: 3px;
+            }
+            button {
+                border: none;
+                background-color: var(--main-color);
+                cursor: pointer;
+            }
+            .product-img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 0.5rem;
+                border-radius: 5px;
+            }
+            .product-title {
+                font-size: 1.1rem;
+                font-weight: 600;
+                text-decoration: uppercase;
+                margin-bottom: 0.5rem;
+                color: var(--text-color);
+                font-family: var(--main-font);
+            }
+            .price {
+                font-weight: 500;
+                color: var(--text-color);
+                font-family: var(--main-font);
+            }
+            .add-cart {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                background: var(--button-color);
+                color: var(--main-color);
+                padding: 10px;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: .3s;
+                font-family: var(--main-font);
+            }
+            .add-cart:hover {
+                background: var(--hover-color);
+            }
+            .details {
+                position: absolute;
+                bottom: 0;
+                right: 2.5rem;
+                font-size: 20px;
+                color: var(--text-color);
+                padding: 10px;
+                cursor: pointer;
+                transition: .3s;
+                font-family: var(--main-font);
+            }
+
+            // modal window
+            .modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #252525af;
+                overflow-y: auto;
+                visibility: hidden;
+                opacity: 0;
+                transition: opacity .4s, visibility .4s;
+                z-index: 1;
+                .modal-window {
+                    position: relative;
+                    z-index: 2;
+                    border-radius: 5px;
+                    background-color: var(--main-color);
+                    padding: 20px;
+                    margin-top: 5rem;
+                    max-width: 400px;
+                    margin: 5rem 15px;
+                }
+                img {
+                    width: 100%;
+                    border-radius: 5px;
+                }
+                h2 {
+                    color: var(--text-color);
+                    font-family: var(--main-font);
+                    margin: 10px 0 5px;
+                    font-size: 2rem;
+                }
+                h3 {
+                    color: var(--text-color);
+                    font-family: var(--main-font);
+                    font-size: 18px;
+                    margin: 15px 0 5px;
+                    font-weight: 500;
+                }
+                p {
+                    color: var(--text-color);
+                    font-family: var(--main-font);
+                    font-weight: 300;
+                    font-size: 14px;
+                    line-height: 25px;
+                }
+                .close-cart {
+                    position: absolute;
+                    right: 5px;
+                    top: 5px;
+                    font-size: 30px;
+                    background-color: var(--main-color);
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+            }
+            .modal.open {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}

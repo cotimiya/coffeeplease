@@ -1,0 +1,231 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['session_username'])) {
+        //echo('<p class="error">'.'ОШИБКА: Вам сюда нельзя!'.'</p>');
+        echo '<meta http-equiv="refresh" content="0;URL=/login.php">';
+    }
+?>
+<link rel="stylesheet" href="header/header.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/shop.css">
+<link rel="stylesheet" href="footer/footer.css">
+<style>
+@import url("css./lk.css");
+</style>
+<header>
+        <a href="main.php" class="logo">Coffee<br>Please</a>
+        <div class="group">
+            <ul class="navigation">
+                <li><a href="main.php">Главная</a></li>
+                <li><a href="shop.php">Меню</a></li>
+                <li><a href="about.php">О компании</a></li>
+                <li><a href="lk.php">Личный кабинет</a></li>
+                <li><a href="#"><ion-icon name="bag-handle" class="bx bx-shopping-bag" id="cart-icon"></ion-icon></a></li>
+            </ul>
+            <ion-icon name="menu-outline" class="menuToggle"></ion-icon>
+            <div class="cart">
+                <h2 class="cart-title">Ваша корзина</h2>
+                <div class="cart-content"></div>
+                <div class="total">
+                    <div class="total-title">Итого</div>
+                    <div class="total-price">0 ₽</div>
+                </div>
+                <button type="button" class="btn-buy" style="border-radius: 5px;">Купить</button>
+                <ion-icon name="close-outline" id="close-cart"></ion-icon>
+            </div>
+        </div>
+    </header>
+
+    <div id="welcome">
+        <h1>Добро пожаловать, <span><?php echo $_SESSION['session_username'] ?></span>!</h1>
+        <div class="buttons">
+            <a href="shop.php">Перейти к меню</a>
+            <a href="main.php">Вернуться на главную</a>
+        </div>
+        <p>
+            <a href="logout.php">Выйти</a> из системы
+        </p>
+    </div>
+
+    <footer>
+        <div class="footerNav">
+            <ul>
+                <li><a href="main.php" id="footer-logo">Coffee<br>Please</a></li>
+                <li><a href="main.php">Главная</a></li>
+                <li><a href="shop.php">Меню</a></li>
+                <li><a href="about.php">О компании</a></li>
+                <li><a href="lk.php">Личный кабинет</a></li>
+                <li><a href="#"><ion-icon name="bag-handle" class="bx bx-shopping-bag" id="cart-icon"></ion-icon></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy;2023; </p>
+        </div>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/shop.js"></script>
+    <script>
+        let navigation = document.querySelector('.navigation');
+        let menuToggle = document.querySelector('.menuToggle');
+        let header = document.querySelector('header');
+
+        menuToggle.onclick = function () {
+            header.classList.toggle('open');
+        }
+    </script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        const sr = ScrollReveal({
+            origin: 'top',
+            distance: '85px',
+            duration: 2500,
+            reset: true
+        })
+        sr.reveal ('#welcome',{delay:300});
+        sr.reveal ('.footerNav',{delay:100});
+        sr.reveal ('.footer-bottom',{delay:100});
+    </script>
+
+
+:root {
+    --main-color: #FAF7F2;
+    --hover-color: #484848;
+    --text-color: #252525;
+    --button-color: #252525;
+    --box-color: #F2EBE0;
+    --main-font: 'Unbounded', sans-serif;
+}
+body {
+    background: var(--main-color);
+    color: var(--text-color);
+}
+
+.mlogin {
+    margin: 170px auto 0;
+    font-family: var(--main-font);
+}
+.mregister {
+    margin: 80px auto 0;
+    font-family: var(--main-font);
+    text-align: left;
+}
+.error {
+    margin: 40px auto 0;
+    border: 1px solid var(--text-color);
+    padding: 3px;
+    color: #fff;
+    text-align: center;
+    width: 650px;
+    background: var(--button-color);
+    border-radius: 5px;
+    font-family: var(--main-font);
+}
+.regtext {
+    font-size: 13px;
+    margin-top: 100px;
+    color: var(--text-color);
+    text-align: center;
+    a {
+        color: var(--button-color);
+        font-weight: 500;
+    }
+    a:hover {
+        color: var(--hover-color);
+    }
+}
+
+.container {
+    padding: 25px 16px 25px 10px;
+    font-weight: 400;
+    overflow: hidden;
+    width: 350px;
+    height: auto;
+    border: 2px solid var(--text-color);
+    border-radius: 5px;
+    h1 {
+        color: var(--text-color);
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 40px;
+    }
+    label {
+        color: #777;
+        font-size: 14px;
+    }
+    .button {
+        border: none;
+        background: var(--button-color);
+        color: #fff;
+        padding: 10px 12px;
+        border-radius: 5px;
+        float: right;
+        cursor: pointer;
+        font-size: 14px;
+        font-family: var(--main-font);
+    }
+    .button:hover {
+        background: var(--hover-color);
+    }
+}
+
+#welcome {
+    width: 70%;
+    padding: 30px;
+    margin: 160px auto 0;
+    border: 2px solid var(--text-color);
+    font-family: var(--main-font);
+    border-radius: 5px;
+    h1 {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .buttons {
+        margin-top: 40px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        margin: 0 auto;
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 15px 20px;
+            background-color: var(--button-color);
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        a:hover {
+            background-color: var(--hover-color);
+        }
+    }
+    p {
+        text-align: center;
+        a {
+            color: red;
+        }
+    }
+}
+
+#login,
+#register {
+    width: 320px;
+    margin: auto;
+    padding-bottom: 15px;
+}
+.container form .input,
+.container form .input[type=text],
+.container form .input[type=password],
+.container form .input[type=email] {
+    background-color: var(--main-color);
+    font-size: 24px;
+    line-height: 1;
+    padding: 3px;
+    width: 100%;
+    margin: 0 6px 5px 0;
+    outline: none;
+    border-style: none;
+    border-bottom: 2px solid var(--hover-color);
+}
+

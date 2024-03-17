@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+    <footer>
+        <div class="footerNav">
+            <ul>
+                <li><a href="main.html" id="footer-logo">Coffee<br>Please</a></li>
+                <li><a href="main.html">Главная</a></li>
+                <li><a href="shop.html">Меню</a></li>
+                <li><a href="#">О компании</a></li>
+                <li><a href="#">Личный кабинет</a></li>
+                <li><a href="#"><ion-icon name="bag-handle" class="bx bx-shopping-bag" id="cart-icon"></ion-icon></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy;2023; </p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+:root {
+    --main-color: #FAF7F2;
+    --hover-color: #484848;
+    --text-color: #252525;
+    --button-color: #252525;
+    --box-color: #F2EBE0;
+    --main-font: 'Unbounded', sans-serif;
+}
+footer {
+    width: 100%;
+    margin-top: 10rem;
+    .footerNav {
+        margin: 30px 0;
+        ul {
+            display: flex;
+            justify-content: center;
+            li {
+                display: flex;
+                align-items: center;
+                a {
+                    position: relative;
+                    color: var(--text-color);
+                    margin: 20px;
+                    text-decoration: none;
+                    font-size: 14px;
+                    text-transform: 0.2em;
+                    font-family: var(--main-font);
+                }
+                a::before {
+                    content: '';
+                    position: absolute;
+                    bottom: -2px;
+                    width: 100%;
+                    height: 2px;
+                    background: var(--text-color);
+                    transform: scaleX(0);
+                    transition: transform 0.5s ease-in-out;
+                    transform-origin: right;
+                }
+                a:hover::before {
+                    transform: scaleX(1);
+                    transform-origin: left;
+                }
+            }
+        }
+    }
+    @media (max-width: 700px) {
+        .footerNav {
+            ul {
+                flex-direction: column;
+                li {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .footer-bottom {
+        background-color: rgba(0, 0, 0, 0.05);
+        padding: 20px;
+        text-align: center;
+        font-family: var(--main-font);
+    }
+}
+
+#footer-logo {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 24px;
+    font-family: var(--main-font);
+}
+@media (max-width: 800px) {
+    .footer-logo {
+        font-size: 1.2rem;
+    }
+}

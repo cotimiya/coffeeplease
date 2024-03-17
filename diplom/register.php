@@ -1,0 +1,141 @@
+<?php require_once("includes/connect.php") ?>
+
+<link rel="stylesheet" href="header/header.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/shop.css">
+<link rel="stylesheet" href="footer/footer.css">
+<style>
+@import url("css/lk.css");
+</style>
+<header>
+        <a href="main.php" class="logo">Coffee<br>Please</a>
+        <div class="group">
+            <ul class="navigation">
+                <li><a href="main.php">Главная</a></li>
+                <li><a href="shop.php">Меню</a></li>
+                <li><a href="about.php">О компании</a></li>
+                <li><a href="lk.php">Личный кабинет</a></li>
+                <li><a href="#"><ion-icon name="bag-handle" class="bx bx-shopping-bag" id="cart-icon"></ion-icon></a></li>
+            </ul>
+            <ion-icon name="menu-outline" class="menuToggle"></ion-icon>
+            <div class="cart">
+                <h2 class="cart-title">Ваша корзина</h2>
+                <div class="cart-content"></div>
+                <div class="total">
+                    <div class="total-title">Итого</div>
+                    <div class="total-price">0 ₽</div>
+                </div>
+                <button type="button" class="btn-buy" style="border-radius: 5px;">Купить</button>
+                <ion-icon name="close-outline" id="close-cart"></ion-icon>
+            </div>
+        </div>
+    </header>
+    <?php
+    if(isset($_POST["register"])) {
+        if(!empty($_POST['full_name']) && !empty($_POST['username']) &&
+        !empty($_POST['email']) && !empty($_POST['password'])) {
+            $full_name = htmlspecialchars($_POST['full_name']);
+            $username = htmlspecialchars($_POST['username']);
+            $email = htmlspecialchars($_POST['email']);
+            $password = htmlspecialchars($_POST['password']);
+            $query = mysqli_query($con, "SELECT * FROM users WHERE
+            username='".$username."'");
+            $numrows = mysqli_num_rows($query);
+            if($numrows == 0) {
+                $sql = "INSERT INTO users (full_name, username, email, password) VALUES
+                ('$full_name', '$username', '$email', '$password')";
+                $result = mysqli_query($con, $sql);
+                if($result) {
+                    $message = 'Аккаунт успешно создан!';
+                } else {
+                    $message = 'Невозможно добавить в БД!';
+                }
+            } else {
+                $message = 'Имя уже существует!';
+            }
+        }  else {
+            $message = 'Все поля необходимо заполнить!';
+        }
+    }
+?>
+<?php
+    if(!empty($message)) {
+        echo('<p class="error">'.'ВНИМАНИЕ: '.$message.'</p>');
+    }
+?>
+<section class="container mregister">
+    <div id="register">
+        <h1>Регистрация</h1>
+        <form action="register.php" id="registerform" method="post" name="registerform">
+            <p style="margin-bottom: 20px;">
+                <label for="full_name">Полное имя <br>
+                <input type="text" class="input" id="full_name" name="full_name" size="32" value=""></label>
+            </p>
+            <p style="margin-bottom: 20px;">
+                <label for="username">Nickname <br>
+                <input type="text" class="input" id="username" name="username" size="32" value=""></label>
+            </p>
+            <p style="margin-bottom: 20px;">
+                <label for="email">Email <br>
+                <input type="text" class="input" id="email" name="email" size="32" value=""></label>
+            </p>
+            <p style="margin-bottom: 40px;">
+                <label for="password">Пароль <br>
+                <input type="password" class="input" name="password" id="password" size="32" value=""></label>
+            </p>
+            <p class="submit">
+                <input type="submit" class="button" id="register" name="register" value="Зарегистрироваться">
+            </p>
+            <p class="regtext">
+                Вы уже зарегистрированы?<br>
+                <a href="login.php">Войдите</a>!
+            </p>
+        </form>
+    </div>
+</section>
+
+<div class="adminform">
+    <a href="/admin/form.php">Я администратор</a>
+</div>
+
+<footer>
+        <div class="footerNav">
+            <ul>
+                <li><a href="main.php" id="footer-logo">Coffee<br>Please</a></li>
+                <li><a href="main.php">Главная</a></li>
+                <li><a href="shop.php">Меню</a></li>
+                <li><a href="about.php">О компании</a></li>
+                <li><a href="lk.php">Личный кабинет</a></li>
+                <li><a href="#"><ion-icon name="bag-handle" class="bx bx-shopping-bag" id="cart-icon"></ion-icon></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy;2023; </p>
+        </div>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/shop.js"></script>
+    <script>
+        let navigation = document.querySelector('.navigation');
+        let menuToggle = document.querySelector('.menuToggle');
+        let header = document.querySelector('header');
+
+        menuToggle.onclick = function () {
+            header.classList.toggle('open');
+        }
+    </script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        const sr = ScrollReveal({
+            origin: 'top',
+            distance: '85px',
+            duration: 2500,
+            reset: true
+        })
+        sr.reveal ('.container',{delay:300});
+        sr.reveal ('.adminform',{delay:300});
+        sr.reveal ('.footerNav',{delay:100});
+        sr.reveal ('.footer-bottom',{delay:100});
+    </script>

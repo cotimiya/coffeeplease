@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap");
+:root {
+  --main-color: #FAF7F2;
+  --hover-color: #484848;
+  --text-color: #252525;
+  --button-color: #252525;
+  --box-color: #F2EBE0;
+  --main-font: "Unbounded", sans-serif;
+}
+
+body {
+  background: var(--main-color);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+img {
+  width: 100%;
+}
+
+header .cart {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 360px;
+  min-height: 100vh;
+  padding: 20px;
+  background: var(--main-color);
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+  z-index: 10;
+}
+header .cart .cart-box {
+  display: grid;
+  grid-template-columns: 32% 50% 18%;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+header .cart .cart-img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 10px;
+}
+header .cart .detail-box {
+  display: grid;
+  row-gap: 0.5rem;
+}
+header .cart .card-product-title {
+  font-size: 1rem;
+  font-family: var(--main-font);
+}
+header .cart .cart-price {
+  font-weight: 500;
+  font-family: var(--main-font);
+}
+header .cart .cart-quantity {
+  border: 1px solid black;
+  border-color: rgb(202, 202, 202);
+  outline-color: rgb(202, 202, 202);
+  width: 2.4rem;
+  text-align: center;
+  font-size: 1rem;
+}
+header .cart .cart-remove {
+  font-size: 24px;
+  color: red;
+  cursor: pointer;
+}
+header .cart .total {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid rgb(202, 202, 202);
+  font-family: var(--main-font);
+}
+header .cart .total-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.5rem;
+  font-family: var(--main-font);
+}
+header .cart .total-price {
+  margin: 0.5rem;
+  font-family: var(--main-font);
+}
+header .cart .btn-buy {
+  display: flex;
+  margin: 1.5rem auto 0 auto;
+  padding: 12px 20px;
+  border: none;
+  background: var(--button-color);
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: var(--main-font);
+  border-radius: 5px;
+}
+header .cart .btn-buy:hover {
+  background-color: var(--hover-color);
+}
+header .cart #close-cart {
+  position: absolute;
+  top: 1rem;
+  right: 0.8rem;
+  font-size: 2rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+header .cart .cart-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  color: var(--text-color);
+  font-family: var(--main-font);
+}
+header .cart.active {
+  right: 0;
+}
+@media (max-width: 400px) {
+  header .cart {
+    width: 320px;
+  }
+}
+@media (max-width: 360px) {
+  header .cart {
+    width: 280px;
+  }
+}
+
+main {
+  margin-top: 2rem;
+}
+main .shop-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+main .shop-container .section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  font-family: var(--main-font);
+}
+@media (max-width: 800px) {
+  main .shop-container .section-title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  main .shop-container .section-title {
+    font-size: 1.5rem;
+  }
+}
+main .shop-container .title-bottom {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  font-family: var(--main-font);
+}
+@media (max-width: 800px) {
+  main .shop-container .title-bottom {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 500px) {
+  main .shop-container .title-bottom {
+    font-size: 1rem;
+  }
+}
+main .shop-container .shop-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+  gap: 1.5rem;
+}
+main .shop-container .shop-content .product-box {
+  position: relative;
+  transition: 0.3s;
+}
+main .shop-container .shop-content .product-box:hover {
+  padding: 3px;
+}
+main .shop-container .shop-content button {
+  border: none;
+  background-color: var(--main-color);
+  cursor: pointer;
+}
+main .shop-container .shop-content .product-img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+}
+main .shop-container .shop-content .product-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  -webkit-text-decoration: uppercase;
+          text-decoration: uppercase;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  font-family: var(--main-font);
+}
+main .shop-container .shop-content .price {
+  font-weight: 500;
+  color: var(--text-color);
+  font-family: var(--main-font);
+}
+main .shop-container .shop-content .add-cart {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--button-color);
+  color: var(--main-color);
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+  font-family: var(--main-font);
+}
+main .shop-container .shop-content .add-cart:hover {
+  background: var(--hover-color);
+}
+main .shop-container .shop-content .details {
+  position: absolute;
+  bottom: 0;
+  right: 2.5rem;
+  font-size: 20px;
+  color: var(--text-color);
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: var(--main-font);
+}
+main .shop-container .shop-content .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(37, 37, 37, 0.6862745098);
+  overflow-y: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s, visibility 0.4s;
+  z-index: 1;
+}
+main .shop-container .shop-content .modal .modal-window {
+  position: relative;
+  z-index: 2;
+  border-radius: 5px;
+  background-color: var(--main-color);
+  padding: 20px;
+  margin-top: 5rem;
+  max-width: 400px;
+  margin: 5rem 15px;
+}
+main .shop-container .shop-content .modal img {
+  width: 100%;
+  border-radius: 5px;
+}
+main .shop-container .shop-content .modal h2 {
+  color: var(--text-color);
+  font-family: var(--main-font);
+  margin: 10px 0 5px;
+  font-size: 2rem;
+}
+main .shop-container .shop-content .modal h3 {
+  color: var(--text-color);
+  font-family: var(--main-font);
+  font-size: 18px;
+  margin: 15px 0 5px;
+  font-weight: 500;
+}
+main .shop-container .shop-content .modal p {
+  color: var(--text-color);
+  font-family: var(--main-font);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 25px;
+}
+main .shop-container .shop-content .modal .close-cart {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-size: 30px;
+  background-color: var(--main-color);
+  border-radius: 5px;
+  cursor: pointer;
+}
+main .shop-container .shop-content .modal.open {
+  visibility: visible;
+  opacity: 1;
+}/*# sourceMappingURL=shop.css.map */
